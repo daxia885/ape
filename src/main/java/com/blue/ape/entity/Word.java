@@ -6,10 +6,18 @@ package com.blue.ape.entity;
  */
 public class Word extends BasicEntity {
 	
+	private String category;	//类别 A B C
 	private String english;	//英文
 	private String chinese;	//中文
-	private String voicePath;	//语音路径
+	private String voicePath;	//语音路径，初步考虑使用百度的语音合成API
+	private String from;		//来源
 	
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
 	public String getEnglish() {
 		return english;
 	}
@@ -27,6 +35,12 @@ public class Word extends BasicEntity {
 	}
 	public void setVoicePath(String voicePath) {
 		this.voicePath = voicePath;
+	}
+	public String getFrom() {
+		return from;
+	}
+	public void setFrom(String from) {
+		this.from = from;
 	}
 	
 }

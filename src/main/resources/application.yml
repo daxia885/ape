@@ -9,3 +9,11 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 mybatis:
   type-aliases-package: com.blue.ape.entity
+  
+baidu:
+  token:
+    apikey: UvECfXQwaLMAbxswNiDU70GT
+    secretkey: BhAhW0sPW11AG9dem3jdFQaTOyq7Ms0
+    url: https://openapi.baidu.com/oauth/2.0/token
+  voicesynthesis:
+    url: https://tsn.baidu.com/text2audio
