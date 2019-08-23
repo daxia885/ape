@@ -1,9 +1,14 @@
 package com.blue.ape.util;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 public class ConstantsUtils {
+	
+	public static String ACCESS_TOKEN;
+	public static Date EXPIRES_DATE;
+	
 	/**
 	 * 分页时，每页查询的数量
 	 */

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="format-detection" content="telephone=no"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>秦先生的英文宝典</title>
+	</head>
+	<link rel="stylesheet" type="text/css" th:href="@{css/english.css}"/>
+	<script th:src="@{js/jquery.js}"></script>
+	<script th:src="@{js/common.js}"></script>
+	<script th:src="@{js/english.js}"></script>
+	<body>
+		<div class="header">
+			<p>程序猿词汇</p>
+		</div>
+		<div class="page">
+			<div class="enjoy">
+				
+			</div>
+			<div class="english">
+				<p>abstract class</p>
+				<audio id="audio" src=""></audio>
+				<i class="play"></i>
+			</div>
+			<div class="chinese hide">
+				<p>抽象类</p>
+			</div>
+		</div>
+		<footer class="btn-group footer">
+			<a class="btn btn-pre">Previou</a>
+			<a class="btn btn-random">Random</a>
+			<a class="btn btn-next">Next</a>
+		</footer>
+	</body>
+	<script th:inline="javascript">
+		pageData = [[${wordList}]];
+		console.log("pageData is:"+ pageData);
+	</script>
+</html>

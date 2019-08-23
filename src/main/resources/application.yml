@@ -7,13 +7,24 @@ spring:
     username: root
     password: 910103zyx
     driver-class-name: com.mysql.cj.jdbc.Driver
+  thymeleaf:
+    mode: HTML5
+    encoding: UTF-8
+    content-type: text/html
+    cache: false
 mybatis:
   type-aliases-package: com.blue.ape.entity
+
+remote:
+  maxTotalConnect: 50
+  maxConnectPerRoute: 20
+  connectTimeout: 60000
+  readTimeout: 60000
   
 baidu:
   token:
     apikey: UvECfXQwaLMAbxswNiDU70GT
-    secretkey: BhAhW0sPW11AG9dem3jdFQaTOyq7Ms0
+    secretkey: BhAhW0sPW11AG9dem3jdFQaTOyq7Ms0G
     url: https://openapi.baidu.com/oauth/2.0/token
   voicesynthesis:
-    url: https://tsn.baidu.com/text2audio
+    url: http://tsn.baidu.com/text2audio

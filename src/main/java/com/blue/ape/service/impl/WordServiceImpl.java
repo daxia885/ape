@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.blue.ape.dao.WordDao;
 import com.blue.ape.service.WordService;
+import com.blue.ape.util.BaiduUtil;
 import com.blue.ape.util.ConstantsUtils;
 
 @Service("wordService")
@@ -15,6 +16,8 @@ public class WordServiceImpl extends ConstantsUtils implements WordService {
 
 	@Autowired
 	private WordDao wordDao;
+	@Autowired
+	private BaiduUtil baiduUtil;
 	
 	@Override
 	public Object pageWordList(int pageNumber, int pageSize) {
@@ -27,6 +30,13 @@ public class WordServiceImpl extends ConstantsUtils implements WordService {
 		int startNum = (pageNumber - 1) * pageSize;
 		List<Map<String, Object>> wordList = wordDao.pageWordList(startNum, pageSize);
 		return wordList;
+	}
+
+	@Override
+	public byte[] saveEnglishVoice(long id, String english) {
+		byte[] voice = baiduUtil.getEnglishVoice(english);
+		wordDao.updateWordVoice(id, voice);
+		return voice;
 	}
 
 }

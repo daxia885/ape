@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 public interface WordDao {
 	
@@ -14,10 +15,12 @@ public interface WordDao {
 	 * 按分页查询词语列表
 	 * @return
 	 */
-	@Select("select english, chinese, voice_path from word order by english limit #{startNum}, #{pageSize}")
+	@Select("select id, english, chinese, voice, voice_path from word where status=0 order by english limit #{startNum}, #{pageSize}")
 	@Results({
 		@Result(property="voicePath", column="voice_path")
 	})
 	List<Map<String, Object>> pageWordList(@Param("startNum") int startNum, @Param("pageSize") int pageSize);
 
+	@Update("update word set voice = #{voice} where id = #{id}")
+	void updateWordVoice(@Param("id") long id, @Param("voice") byte[] voice);
 }

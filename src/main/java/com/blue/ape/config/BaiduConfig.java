@@ -1,7 +1,9 @@
 package com.blue.ape.config;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component
 public class BaiduConfig {
 	
 	@Value("${baidu.token.apikey}")

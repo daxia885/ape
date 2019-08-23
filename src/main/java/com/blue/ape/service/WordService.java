@@ -6,5 +6,7 @@ public interface WordService {
 	 * @return
 	 */
 	Object pageWordList(int pageNumber, int pageSize);
+	
+	byte[] saveEnglishVoice(long id, String english);
 
 }
