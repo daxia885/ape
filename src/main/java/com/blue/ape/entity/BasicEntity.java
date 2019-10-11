@@ -5,7 +5,7 @@ import java.util.Date;
 public class BasicEntity {
 	
 	private Long id;
-	private Integer status;
+	private Integer status = 0;
 	private Date createTime;
 	private Date updateTime;
 	private String remark;

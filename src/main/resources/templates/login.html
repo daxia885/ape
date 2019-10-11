@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no"/>
+		<title>秦先生的英文宝典</title>
+	</head>
+	<link rel="stylesheet" type="text/css" th:href="@{css/common.css}"/>
+	<script th:src="@{js/jquery.js}"></script>
+	<script th:src="@{js/common.js}"></script>
+	<body>
+		<header>
+			<div class="ape-header">注册新用户</div>
+		</header>
+		<div class="ape-container">
+			<div class="ape-show-logo"></div>
+			<form class="ape-form" action="/ape/loginMember" method="post">
+				<input class="ape-user ape-input-half" type="text" name="username" placeholder="请输入用户名"/>
+				<input class="ape-password ape-input-half" type="password" name="password" placeholder="请输入密码"/>
+				<a class="ape-href" href="#">忘记密码></a>
+				<button class="ape-btn disabled">登录</button>
+			</form>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(function() {
+			$("input").change(function() {
+				var username = $("input[name='username']").val().trim();
+				var password = $("input[name='password']").val();
+				if ("" != username && "" != password) {
+					$("button.ape-btn").removeClass("disabled");
+				} else {
+					$("button.ape-btn").addClass("disabled");
+				}
+			});
+			
+			$(".ape-btn").click(function() {
+				if ($(this).hasClass("disabled")) {return false;}
+				var username = $("#username").val().trim();
+				var password = $("#password").val();
+				var data = {"username":username, "password":password};
+				$(".ape-form").submit();
+			});
+		});
+	</script>
+</html>

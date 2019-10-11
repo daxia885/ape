@@ -3,39 +3,53 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="format-detection" content="telephone=no"/>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no"/>
 		<title>秦先生的英文宝典</title>
 	</head>
-	<link rel="stylesheet" type="text/css" th:href="@{css/english.css}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{css/common.css?v=4}"/>
 	<script th:src="@{js/jquery.js}"></script>
 	<script th:src="@{js/common.js}"></script>
-	<script th:src="@{js/english.js}"></script>
+	<script th:src="@{js/english.js?v=2}"></script>
 	<body>
-		<div class="header">
-			<p>程序猿词汇</p>
+		<div class="ape-container">
+			<div class="ape-process">
+				<div class="ape-left">
+					<h5>今日单词</h5>
+					<span>5个</span>
+				</div>
+				<div class="ape-right">
+					<h5>学习时间</h5>
+					<span>5min</span>
+				</div>
+			</div>
+			<div class="ape-page">
+				<div class="ape-sign-right">
+					<span class="ape-book-text">收藏</span>
+					<div class="ape-book"></div>
+				</div>
+				<div class="ape-english">
+					<p>an abstract</p>
+					<audio src="" id="audio"></audio>
+					<div class="ape-play"></div>
+				</div>
+				<div class="ape-chinese ape-hide">
+					<p>抽象的</p>
+				</div>
+			</div>
+			<div class="ape-btn-group">
+				<button class="ape-btn ape-btn-remember">我认识</button>
+				<button class="ape-btn ape-btn-forget">想不起来</button>
+				<button class="ape-btn ape-btn-next ape-hide">下一个</button>
+			</div>
 		</div>
-		<div class="page">
-			<div class="enjoy">
-				
-			</div>
-			<div class="english">
-				<p>abstract class</p>
-				<audio id="audio" src=""></audio>
-				<i class="play"></i>
-			</div>
-			<div class="chinese hide">
-				<p>抽象类</p>
-			</div>
-		</div>
-		<footer class="btn-group footer">
-			<a class="btn btn-pre">Previou</a>
-			<a class="btn btn-random">Random</a>
-			<a class="btn btn-next">Next</a>
-		</footer>
 	</body>
 	<script th:inline="javascript">
 		pageData = [[${wordList}]];
+		memberId = [[${memberId}]];
 		console.log("pageData is:"+ pageData);
 	</script>
 </html>

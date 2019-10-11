@@ -1,0 +1,229 @@
+* {
+	padding: 0;
+	margin: 0;
+	-webkit-tap-highlight-color: rgba(240, 240, 240, 0);
+}
+
+html, body {
+	width: 100%;
+	font-family: "微软雅黑";
+	-webkit-overflow-scrolling: touch
+}
+
+ul li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+button {
+	border: 0;
+	border-radius: 0;
+	-webkit-appearance: none;
+	font-family: "微软雅黑";
+	outline: none;
+}
+
+input {
+	outline: none;
+	font-family: "微软雅黑";
+}
+
+img {
+	padding: 0;
+	border: 0;
+	margin: 0;
+	display: inline-block;
+}
+
+.bodyer input::-webkit-input-placeholder {
+	font-family: "微软雅黑";
+	color: #D3D3D3;
+}
+
+.header {
+	height: 3.173rem;
+	width: 100%;
+	background: #fff;
+	overflow: hidden;
+	position: relative;
+}
+
+.header p {
+	background-color: #222222;
+	line-height: 3.174rem;
+	color: ghostwhite;
+	font-size: 1.15rem;
+	font-weight: 700;
+	position: absolute;
+	right: 0;
+	left: 0;
+	text-align: center;
+}
+
+.ape-default-theme {
+	color: #61B0A4;
+}
+
+.ape-show-logo {
+	height: 140px;
+	background: url("../img/hand.jpg") no-repeat center;
+	background-size: cover;
+	-webkit-background-size: cover;
+}
+/* header */
+.ape-header {
+	width: -webkit-fill-available;
+	text-align: right;
+	font-size: 16px;
+	color: #F5A623;
+	margin: 10px;
+}
+/* 按钮 */
+.ape-btn {
+	height: 40px;
+	width: -webkit-fill-available;
+	font-size: 16px;
+	margin: 20px 10px 0 10px;
+	border-radius: 2px;
+	background: #F5A623;
+	color: #ffffff;
+}
+
+.ape-btn.disabled {
+	color: #bebebe;
+	background: #eee;
+}
+
+.ape-form {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.ape-input-half {
+	border: 0;
+	border-bottom: 1px solid #ddd;
+	width: -webkit-fill-available;
+	font-size: 16px;
+	font-weight: 200;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 40px;
+	padding: 0 0 5px 50px;
+}
+
+.ape-user {
+	background: url("../img/user1.png") no-repeat left;
+	background-size: contain;
+}
+
+.ape-password {
+	background: url("../img/password.png") no-repeat left;
+	background-size: contain;
+	margin-bottom: 10px;
+}
+
+.ape-href {
+	float: right;
+	font-size: 14px;
+	color: #999999;
+	margin-right: 12px;
+	cursor: pointer;
+}
+.ape-process {
+	font-size: 13px;
+	height: 40px;
+	text-align: center;
+	margin: 10px 10px 5px 10px;
+}
+.ape-left {
+	float: left;
+}
+.ape-right {
+	float: right;
+}
+.ape-process h5 {
+	color: #999999;
+	font-weight: normal;
+}
+.ape-process span {
+	color: #111;
+}
+.ape-page {
+	border-top: solid 2px #999999;
+	padding: 30px 0px;
+}
+.ape-english {
+	text-align: center;
+	font-size: 48px;
+	padding: 80px;
+}
+.ape-english p {
+	margin-bottom: 5px;
+}
+.ape-middle-font {
+	font-size: 35px;
+}
+.ape-play {
+	width: 22px;
+	height: 22px;
+	margin: auto;
+	background: url(../img/bar.png) no-repeat center center;
+	background-size: cover;
+	-webkit-background-size: cover;
+	cursor: pointer;
+}
+.ape-sign-right {
+	float: right;
+	background-color: #e8e6e6;
+	border-top-left-radius: 12px;
+	border-bottom-left-radius: 12px;
+	padding: 5px;
+}
+.ape-book {
+	width: 20px;
+	height: 20px;
+	float: right;
+	background: url(../img/blank_heart.png) no-repeat center center;
+	background-size: cover;
+	-webkit-background-size: cover;
+	cursor: pointer;
+}
+.ape-book-collected {
+	background: url(../img/heart.png) no-repeat center center;
+	background-size: cover;
+	-webkit-background-size: cover;
+}
+.ape-book-text {
+	float: right;
+	font-size: 13px;
+	color: #999999;
+	padding-left: 2px;
+}
+.ape-chinese {
+ 	text-align: center;
+	font-size: 38px;
+	padding: 20px;
+ }
+.ape-hide {
+	display: none !important;
+}
+.ape-btn-group {
+	position: fixed;
+	width: 100%;
+	margin-bottom: 10px;
+	bottom: 0;
+}
+.ape-btn-remember {
+	border-radius: 6px;
+}
+.ape-btn-forget {
+	border-radius: 6px;
+	background-color: #da6c6c;
+}
+.ape-btn-next {
+	border-radius: 6px;
+	background-color: #209e85;
+}

@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.thymeleaf.util.StringUtils;
 
 import com.blue.ape.config.RequestParam;
+import com.blue.ape.entity.Process;
 import com.blue.ape.entity.Word;
+import com.blue.ape.service.ProcessService;
 import com.blue.ape.service.WordService;
 
 @Controller
@@ -20,10 +22,13 @@ public class WordController {
 	
 	@Autowired
 	private WordService wordService;
+	@Autowired
+	private ProcessService processService;
 	
 	@RequestMapping("index")
 	public String index(Model model) {
 		Object wordList = wordService.pageWordList(1, 20);
+		model.addAttribute("memberId", 1);
 		model.addAttribute("wordList", wordList);
 		return "index";
 	}
@@ -45,5 +50,15 @@ public class WordController {
 		String base64Voice = Base64.getEncoder().encodeToString(voiceBytes);
 		System.out.println(base64Voice);
 		return base64Voice;
+	}
+	
+	@PostMapping("setWordStudied")
+	@ResponseBody
+	public String setWordStudied(@RequestBody Process process) {
+		if (null == process.getMember() || null == process.getWord()) {
+			return "error";
+		}
+		processService.addProcess(process);
+		return "success";
 	}
 }

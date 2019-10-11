@@ -21,7 +21,7 @@ import com.blue.ape.util.ConstantsUtils;
 @Component
 public class ReturnAspectAop extends ConstantsUtils {
 	
-	@Pointcut("execution(public * com.blue.ape.web.*.page*(..))")
+	@Pointcut("execution(public Object com.blue.ape.web.*.*(..))")
 	public void returnContent() {
 		
 	}

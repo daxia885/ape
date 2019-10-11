@@ -4,16 +4,17 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * 收藏
+ * 学习进度
  * @author daxia
  *
  */
-public class Collect implements Serializable {
+public class Process implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Long id;
-	private Member member;	//收藏者
-	private Word word;		//收藏的英文
+	private Member member;
+	private Word word;
+	private Integer level;	//难易程度 1-我认识，2-想不起来
 	private Date createTime;
 	
 	public Long getId() {
@@ -21,12 +22,6 @@ public class Collect implements Serializable {
 	}
 	public void setId(Long id) {
 		this.id = id;
-	}
-	public Date getCreateTime() {
-		return createTime;
-	}
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
 	}
 	public Member getMember() {
 		return member;
@@ -39,6 +34,18 @@ public class Collect implements Serializable {
 	}
 	public void setWord(Word word) {
 		this.word = word;
+	}
+	public Integer getLevel() {
+		return level;
+	}
+	public void setLevel(Integer level) {
+		this.level = level;
+	}
+	public Date getCreateTime() {
+		return createTime;
+	}
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
 	}
 	
 }
