@@ -227,3 +227,92 @@ img {
 	border-radius: 6px;
 	background-color: #209e85;
 }
+.ape-banner-text {
+	/*position: absolute;*/
+	padding: 80px 0;
+	width: 100%;
+	background-color: #F5A623;
+	color: #fff;
+	text-align: center;
+	opacity: 0.5;
+}
+.ape-banner-text hr {
+	border-top: none;
+	width: 80px;
+	margin: auto;
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+.ape-big-text {
+	font-size: 30px;
+}
+.ape-middle-text {
+	font-size: 18px;
+}
+.ape-menu-square-left {
+	width: 49%;
+	height: 100px;
+	border: solid 1px #fff222;
+	float: left;
+}
+.ape-menu-square-right {
+	width: 49%;
+	height: 100px;
+	border: solid 1px red;
+	float: right;
+}
+.ape-menu-table {
+	padding: 10px;
+	border-spacing: unset;
+}
+.ape-menu-table tr td {
+	width: 50%;
+	height: 140px;
+	text-align: center;
+	margin: auto;
+}
+.ape-menu-table .ape-first-td {
+	border-right: solid 1px #e8e6e6;
+	border-bottom: solid 1px #e8e6e6;
+}
+.ape-menu-table .ape-second-td {
+	border-bottom: solid 1px #e8e6e6;
+}
+.ape-menu-table .ape-three-td {
+	border-right: solid 1px #e8e6e6;
+}
+.ape-menu-table .ape-menu {
+	width: 60px;
+	height: 60px;
+	display: inline-block;
+}
+.ape-collect {
+	background: url("../img/collect.png") no-repeat center center;
+	background-size: cover;
+	-webkit-background-size: cover;
+}
+.ape-error-book {
+	display: inline-block;
+	background: url("../img/error.png") no-repeat center center;
+	background-size: cover;
+	-webkit-background-size: cover;
+}
+.ape-test {
+	background: url("../img/test.png") no-repeat center center;
+	background-size: cover;
+	-webkit-background-size: cover;
+}
+.ape-study {
+	background: url("../img/study.png") no-repeat center center;
+	background-size: cover;
+	-webkit-background-size: cover;
+}
+.ape-foot-menu {
+	list-style: none;
+	position: absolute;
+	bottom: 0;
+}
+.ape-foot-menu li {
+	display: inline;
+	line-height: 40px;
+}

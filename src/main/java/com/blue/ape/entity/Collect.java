@@ -15,6 +15,7 @@ public class Collect implements Serializable {
 	private Member member;	//收藏者
 	private Word word;		//收藏的英文
 	private Date createTime;
+	private boolean isCollect;
 	
 	public Long getId() {
 		return id;
@@ -39,6 +40,12 @@ public class Collect implements Serializable {
 	}
 	public void setWord(Word word) {
 		this.word = word;
+	}
+	public boolean isCollect() {
+		return isCollect;
+	}
+	public void setCollect(boolean isCollect) {
+		this.isCollect = isCollect;
 	}
 	
 }

@@ -23,4 +23,12 @@ public interface WordDao {
 
 	@Update("update word set voice = #{voice} where id = #{id}")
 	void updateWordVoice(@Param("id") long id, @Param("voice") byte[] voice);
+
+	@Select("select id, english, chinese, voice, voice_path from word "
+			+ "where id > (select max(word_id) from process where member_id=#{memberId}) and status=0 "
+			+ "order by english limit #{startNum}, #{pageSize}")
+	@Results({
+		@Result(property="voicePath", column="voice_path")
+	})
+	List<Map<String, Object>> pageWordListFromProcess(@Param("startNum") int startNum, @Param("pageSize") int pageSize, @Param("memberId") int memberId);
 }

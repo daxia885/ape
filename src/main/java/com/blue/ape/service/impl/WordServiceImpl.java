@@ -39,4 +39,17 @@ public class WordServiceImpl extends ConstantsUtils implements WordService {
 		return voice;
 	}
 
+	@Override
+	public Object pageWordListFromProcess(int pageNumber, int pageSize, int memberId) {
+		if (0 == pageNumber) {
+			return PAGE_NUMBER_IS_NULL;
+		}
+		if (0 == pageSize) {
+			pageSize = PAGE_SIZE_DEFAULT;
+		}
+		int startNum = (pageNumber - 1) * pageSize;
+		List<Map<String, Object>> wordList = wordDao.pageWordListFromProcess(startNum, pageSize, memberId);
+		return wordList;
+	}
+
 }

@@ -25,9 +25,9 @@ public class CollectServiceImpl implements CollectService {
 	}
 
 	@Override
-	public int deleteCollect(long memberId, long wordId) {
-		if (memberId > 0 && wordId > 0) {
-			return collectDao.deleteCollect(memberId, wordId);
+	public int deleteCollect(Collect collect) {
+		if (null != collect) {
+			return collectDao.deleteCollect(collect.getMember().getId(), collect.getWord().getId());
 		}
 		return 0;
 	}

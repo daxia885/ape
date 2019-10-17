@@ -8,5 +8,7 @@ public interface WordService {
 	Object pageWordList(int pageNumber, int pageSize);
 	
 	byte[] saveEnglishVoice(long id, String english);
+	
+	Object pageWordListFromProcess(int pageNumber, int pageSize, int memberId);
 
 }

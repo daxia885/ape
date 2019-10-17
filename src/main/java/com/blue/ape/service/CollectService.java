@@ -6,6 +6,6 @@ public interface CollectService {
 	
 	int addCollect(Collect collect);
 	
-	int deleteCollect(long memberId, long wordId);
+	int deleteCollect(Collect collect);
 
 }

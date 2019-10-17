@@ -35,6 +35,9 @@ $(function() {
 		$(".ape-chinese").addClass("ape-hide");
 		$(".ape-btn-remember").removeClass("ape-hide");
 		$(".ape-btn-forget").removeClass("ape-hide");
+		if (total - tnum <= 10) {
+			nextPage(++pageNumber);
+		}
 	});
 
 	/**
@@ -42,6 +45,10 @@ $(function() {
 	 */
 	$(".ape-book").click(function() {
 		$(this).toggleClass("ape-book-collected");
+		var isCol = $(this).hasClass("ape-book-collected")?true:false;
+		var wid = $(".ape-english p").attr("id");
+		var dataJson = {"member":{"id":memberId},"word":{"id":wid}, "isCollect":isCol};
+		collectWord(dataJson);
 	});
 	
 	/**
@@ -59,7 +66,7 @@ $(function() {
 	/**
 	 * 1分钟定时统计一下学习时间
 	 */
-	var countTime = setTimeout(function() {
+	setTimeout(function() {
 		tmin += 1;
 		$(".ape-process .ape-right span").text(tmin +"min");
 	}, 60000);
@@ -95,13 +102,33 @@ $(function() {
 		}
 	}
 	
+	/**
+	 * 收藏与取消收藏
+	 */
+	function collectWord(dataJson) {
+		$.ajax({
+			url : "/"+ contextPath +"collectWord",
+			type : "post",
+			contentType : "application/json",
+			data : JSON.stringify(dataJson),
+			success : function(data) {
+				console.log(data);
+			},
+			error : function(e) {
+				console.log(e);
+			}
+		});
+	}
+	
+	/**
+	 * 标记该单词已读
+	 */
 	function setWordStudied(level) {
 		var wid = $(".ape-english p").attr("id");
 		var dataJson = {"member": {"id":memberId}, "word":{"id":wid}, "level":level};
 		$.ajax({
 			url : "/"+ contextPath +"setWordStudied",
 			type : "post",
-			async : false,
 			contentType : "application/json",
 			data : JSON.stringify(dataJson),
 			success : function(data) {
@@ -139,13 +166,14 @@ $(function() {
 	/**
 	 * 获取下一页
 	 */
-	function nextPage() {
+	function nextPage(pageNumber) {
 		$.ajax({
 			url : "/"+ contextPath +"pageWordList",
 			type : "post",
 			contentType : "application/json",
-			data : "{\"pageNumber\":1,\"pageSize\":30}",
+			data : "{\"pageNumber\":"+pageNumber+",\"pageSize\":10}",
 			success : function(data) {
+				console.log("获取下一页了...");
 				wordData = wordData.concat(data.content);
 				total += data.content.length;
 			},
@@ -158,6 +186,7 @@ $(function() {
 
 var wordData;
 var index = 1;
+var pageNumber = 1;
 var total = 0;
 var tnum = 0; 	//今日单词个数
 var tmin = 0; 	//今日学习时间
