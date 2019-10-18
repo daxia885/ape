@@ -10,7 +10,7 @@
 		<meta name="format-detection" content="telephone=no"/>
 		<title>秦先生的英文宝典</title>
 	</head>
-	<link rel="stylesheet" type="text/css" th:href="@{css/common.css?v=3}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{css/common.css?v=6}"/>
 	<script th:src="@{js/jquery.js}"></script>
 	<script th:src="@{js/common.js}"></script>
 	<body>
@@ -24,49 +24,55 @@
 				<tr>
 					<td class="ape-first-td">
 						<i class="ape-menu ape-collect"></i>
+						<span>收藏录</span>
 					</td>
 					<td class="ape-second-td">
 						<i class="ape-menu ape-error-book"></i>
+						<span>错题本</span>
 					</td>
 				</tr>
 				<tr>
 					<td class="ape-three-td">
 						<i class="ape-menu ape-test"></i>
+						<span>小测试</span>
 					</td>
 					<td>
-						<i class="ape-menu ape-study"></i>
+						<i class="ape-menu ape-study-active"></i>
+						<span>背单词</span>
 					</td>
 				</tr>
 			</table>
-			<ul class="ape-foot-menu">
-				<li>
-					<i></i><span>首页</span>
-				</li>
-				<li></li>
-				<li>
-					<i></i><span>我的</span>
-				</li>
-			</ul>
+			<nav class="ape-foot-menu">
+				<hr class="ape-foot-line">
+				<a class="ape-menu-item" href="#">
+					<span class="icon ape-home"></span>
+					<span class="ape-menu-label">首页</span>
+				</a>
+				<a class="ape-menu-item" href="#">
+					<span class="icon ape-study"></span>
+					<span class="ape-menu-label">单词</span>
+				</a>
+				<a class="ape-menu-item" href="#">
+					<span class="icon ape-my"></span>
+					<span class="ape-menu-label">我的</span>
+				</a>
+			</nav>
 		</div>
 	</body>
 	<script type="text/javascript">
 		$(function() {
-			$("input").change(function() {
-				var username = $("input[name='username']").val().trim();
-				var password = $("input[name='password']").val();
-				if ("" != username && "" != password) {
-					$("button.ape-btn").removeClass("disabled");
+			$(".ape-foot-menu a").click(function() {
+				if($(this).hasClass("active")) {
+					$(this).removeClass("active");
+					var span = $(this).children("span:first-child")[0];
+					var cls = $(span).attr("class");
+					$(span).attr("class", cls.substr(0,cls.lastIndexOf('-')));
 				} else {
-					$("button.ape-btn").addClass("disabled");
+					$(this).addClass("active");
+					var span = $(this).children("span:first-child")[0];
+					var cls = $(span).attr("class");
+					$(span).attr("class", cls+"-active");
 				}
-			});
-			
-			$(".ape-btn").click(function() {
-				if ($(this).hasClass("disabled")) {return false;}
-				var username = $("#username").val().trim();
-				var password = $("#password").val();
-				var data = {"username":username, "password":password};
-				$(".ape-form").submit();
 			});
 		});
 	</script>

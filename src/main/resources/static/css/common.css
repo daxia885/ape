@@ -281,6 +281,10 @@ img {
 .ape-menu-table .ape-three-td {
 	border-right: solid 1px #e8e6e6;
 }
+.ape-menu-table tr td span {
+	display: block;
+	font-size: 15px;
+}
 .ape-menu-table .ape-menu {
 	width: 60px;
 	height: 60px;
@@ -303,16 +307,65 @@ img {
 	-webkit-background-size: cover;
 }
 .ape-study {
-	background: url("../img/study.png") no-repeat center center;
+	background: url("../img/word.png") no-repeat center center;
+	background-size: cover;
+	-webkit-background-size: cover;
+}
+.ape-study-active {
+	background: url("../img/word-active.png") no-repeat center center;
+	background-size: cover;
+	-webkit-background-size: cover;
+}
+.ape-home {
+	background: url("../img/home.png") no-repeat center center;
+	background-size: cover;
+	-webkit-background-size: cover;
+}
+.ape-home-active {
+	background: url("../img/home-active.png") no-repeat center center;
+	background-size: cover;
+	-webkit-background-size: cover;
+}
+.ape-my {
+	background: url("../img/my.png") no-repeat center center;
+	background-size: cover;
+	-webkit-background-size: cover;
+}
+.ape-my-active {
+	background: url("../img/my-active.png") no-repeat center center;
 	background-size: cover;
 	-webkit-background-size: cover;
 }
 .ape-foot-menu {
-	list-style: none;
 	position: absolute;
 	bottom: 0;
+	width: 100%;
+	padding: 0;
 }
-.ape-foot-menu li {
-	display: inline;
-	line-height: 40px;
+.ape-menu-item {
+	position: relative;
+	display: table-cell;
+	width: 1%;
+	height: 30px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 0;	/*解决两元素之间的空白*/
+	color: #bfbfbf;
+}
+.ape-menu-item .icon {
+	position: relative;
+	height: 18px;
+	width: 18px;
+	display: inline-block;
+}
+.ape-menu-label {
+	display: block;
+	font-size: 12px;
+}
+.active {
+	color: #F5A623;
+}
+.ape-foot-line {
+	border-top: solid 1px #e8e6e6;
+	margin-bottom: 5px;
 }
